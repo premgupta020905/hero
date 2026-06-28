@@ -6,6 +6,8 @@
 
 body{
     font-family: Poppins, sans-serif;
+    overflow-x: hidden;
+    overflow: hidden;
 }
 
 nav{
@@ -92,48 +94,59 @@ nav{
     transform:scale(1.1) rotate(-10deg);
 }
 
+/* sir ye mera right div hai mene ishme animation lagaya hai uska name orbit hai isko width aur height diya center mai align kiya hu   */
 .right{
-    width:-50px;
+    width:50%;
     height: 400px;
     text-align:center;
     justify-content: center;
-    animation: orbit 3s linear infinite;
+    animation: orbit 1.8s linear infinite;
 }
-
+/* ye img ka widht hai */
 .box img{
-    width:450px;
+    width:350px;
     max-width:100%;
-    margin-right: 5rem;
 }
-
+/* yaha mene animation use kiya hai uska name img-orbit hai */
 .box {
-    animation: counter-orbit 3s linear infinite;
+    animation: img-orbit 1.8s linear infinite ;
 }
-
+/* ishme mene ai nahi use kiya tha mai @keyframe orbit likha baki sabh apne aap aane laga tha toh mene usko hatakar 25% dala baki apne aap aaya
+ mene usko edit kiya aisa hi baki ka kiya mujhe squeez ka samjh nahi aara tha kyuki mei 0 deg niche se samjh raha tha aur woh upper se start hora
+  tha phir mene 350deg use kiya toh woh upper squeez hora tha tabh mene google kar 360 circle view dekha ushmai bhi 0 deg upper ki taraf tha fhir 
+  mujhe samjha aur mene google kiya apna key frame ka code dekar ki 170 deg kitne par aayega usne bataya 47% fhir mene ye use kiya fhir thoda aur 
+  accha dikhne kai liye mene 160deg use kiya    */
 @keyframes orbit {
     0% {
-        transform: rotate(0deg) scale(0.9);
+        transform: rotate(0deg) scale(1);
     }
     25% {
-        transform: rotate(90deg) scale(0.9); 
+        transform: rotate(90deg) scale(1); 
+    }
+    47%{
+        transform: rotate(160deg) scaleX(0.9) scaleY(0.9);
     }
     50% {
-        transform: rotate(180deg) scale(0.9);
+        transform: rotate(180deg) scale(1);
     }
     75% {
-        transform: rotate(270deg) scaleX(0.8) scaleY(0.8);
+        transform: rotate(270deg) scale(1);
     }
     100% {
-        transform: rotate(360deg) scale(0.9);
+        transform: rotate(360deg) scale(1);
     }
 }
-
-@keyframes counter-orbit {
+/* ye mera img ka hai mene isko ek video mai dekha tha serch karke usne text kai liye use kiya mene wahi soch kar img kai liye use kiya kyuki right container ghum 
+raha tha toh img bhi ghum rahi thi yaha (-) karne se nahi ghum raha kyuki ye ulta ghum raha hai mujhe aise hi samjha aur mene use kiya hai */
+@keyframes img-orbit {
     0% {
         transform: rotate(0deg);
     }
     25% {
         transform: rotate(-90deg); 
+    }
+    47% {
+        transform: rotate(-160deg);
     }
     50% {
         transform: rotate(-180deg);
@@ -141,6 +154,7 @@ nav{
     75% {
         transform: rotate(-270deg);
     }
+    
     100% {
         transform: rotate(-360deg);
     } 
